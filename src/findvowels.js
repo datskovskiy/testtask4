@@ -1,6 +1,15 @@
 const findVowels = (str) => {
-    // Your implementation
-    // Read README.md file, if you not understand what to do
+    if (typeof str != 'string')
+        return 'Passed argument is not a string';
+
+    if (str.length == 0)
+        return 'String is empty';
+
+    let result = str.match(/[aeiou]/gi);
+
+    return result === null 
+        ? 'String does not contain vowels' 
+        : result.length;
 };
 
 module.exports = findVowels;
